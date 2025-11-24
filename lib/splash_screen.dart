@@ -1,23 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
-  @override
-  Widget build(context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-            colors: [Color(0xff460252), Color(0xffa31eba)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight),
-      ),
-      child: const Contents(),
-    );
-  }
-}
+  const SplashScreen(this.quizStart, {super.key});
 
-class Contents extends StatelessWidget {
-  const Contents({super.key});
+  final void Function() quizStart;
 
   @override
   Widget build(context) {
@@ -44,17 +30,15 @@ class Contents extends StatelessWidget {
             height: 40,
           ),
           OutlinedButton.icon(
-            onPressed: () {
-              print("Hello quize");
-            },
+            onPressed: quizStart,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                 fontSize: 16,
               ),
             ),
             icon: const Icon(Icons.arrow_right_alt, color: Colors.white),
-            label: const Text("Start"),
+            label: const Text("Start quiz"),
           ),
         ],
       ),
