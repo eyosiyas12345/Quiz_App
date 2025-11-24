@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quize_app/splash_screen.dart';
+import 'package:quize_app/quiz.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SplashScreen(),
-      ),
-    ),
+    const Quiz(),
   );
 }
